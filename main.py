@@ -46,9 +46,12 @@ def keep_alive():
 # ==================== KONFIGURATSIYA ====================
 # Render Environment Variables-dan o'qiydi, agar bo'lmasa pastdagini ishlatadi
 BOT_TOKEN = os.environ.get('BOT_TOKEN', "7847069401:AAGGgVQlS5WHgfsxF5yrAfxGFxTCn6DabCU")
-ADMIN_PHONE = "+998997236222"
-ADMIN_TELEGRAM = "@nnoovvaaxx"
-ADMIN_IDS = [6616832324]  # O'z ID ingizni qo'ying
+ADMIN_PHONE = os.environ.get('ADMIN_PHONE', "+998997236222")
+ADMIN_TELEGRAM = os.environ.get('ADMIN_TELEGRAM', "@nnoovvaaxx")
+
+# ADMIN_IDS ni vergul bilan ajratilgan string shaklida olib, listga aylantiramiz
+admin_ids_raw = os.environ.get('ADMIN_IDS', "6616832324")
+ADMIN_IDS = [int(i.strip()) for i in admin_ids_raw.split(',') if i.strip().isdigit()]
 
 # ==================== LOGGING ====================
 logging.basicConfig(
