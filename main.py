@@ -1478,7 +1478,12 @@ def main():
     # Render uchun web serverni ishga tushirish
     keep_alive()
     
-    # Botni ishga tushirish
+    # Botni ishga tushirish (Fix for Render/Python 3.10+)
+    try:
+        asyncio.get_event_loop()
+    except RuntimeError:
+        asyncio.set_event_loop(asyncio.new_event_loop())
+
     app.run_polling(allowed_updates=Update.ALL_TYPES)
 
 if __name__ == '__main__':
