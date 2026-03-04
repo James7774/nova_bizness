@@ -45,7 +45,7 @@ def keep_alive():
 
 # ==================== KONFIGURATSIYA ====================
 # Render Environment Variables-dan o'qiydi, agar bo'lmasa pastdagini ishlatadi
-BOT_TOKEN = os.environ.get('BOT_TOKEN', "7847069401:AAGGgVQlS5WHgfsxF5yrAfxGFxTCn6DabCU")
+BOT_TOKEN = os.environ.get('BOT_TOKEN', "7753850166:AAFA5L_5y9UjKZXAeVUCvi2to8D83yX0zc8")
 ADMIN_PHONE = os.environ.get('ADMIN_PHONE', "+998997236222")
 ADMIN_TELEGRAM = os.environ.get('ADMIN_TELEGRAM', "@nnoovvaaxx")
 
